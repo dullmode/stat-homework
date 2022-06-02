@@ -70,5 +70,6 @@ cr_df['zip'] = cr_df.progress_apply(
         lat_field='Latitude',
         lon_field='Longitude'
         )
+
 cr_df.to_csv('input_data/crime.csv')
 

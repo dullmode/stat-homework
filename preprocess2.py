@@ -16,17 +16,17 @@ ab_df = pd.read_csv('input_data/airbnb.csv')
 
 #checking zip code
 re_df[z] = fix_zip(re_df['Zip Code'])
+fs_df[z] = fix_zip(fs_df['Zip Code'])
 ta_df[z] = fix_zip(ta_df['ZIP'])
-fs_df[z] = fix_zip(fs_df['Zip'])
 cr_df[z] = fix_zip(cr_df['zip'])
 pl_df[z] = fix_zip(pl_df['zip'])
 hi_df[z] = fix_zip(hi_df['zip'])
 ab_df[z] = fix_zip(ab_df['zip'])
 
 #totaling up by zip code, adding each column names to each columns
-ta_df = ta_df[z].value_counts().rename_axis(z).reset_index(name="tabbaco_num")
+ta_df = ta_df[z].value_counts().rename_axis(z).reset_index(name="tabacco_num")
 cr_df = cr_df[z].value_counts().rename_axis(z).reset_index(name="crime_num")
-fs_df = fs_df[z].value_counts().rename_axis(z).reset_index(name="greenhouse_num")
+fs_df = fs_df[z].value_counts().rename_axis(z).reset_index(name="fire_station_num")
 re_df = re_df[z].value_counts().rename_axis(z).reset_index(name="restaurant_num")
 hi_df = hi_df[z].value_counts().rename_axis(z).reset_index(name="historic_num")
 

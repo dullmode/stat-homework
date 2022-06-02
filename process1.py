@@ -6,18 +6,18 @@ df = pd.read_csv('output_data/result.csv')
 price = df.loc[:, "price"]
 dist_from_st = df.loc[:, "dist_from_st"]
 pop = df.loc[:, "pop"]
-ezpass_num = df.loc[:, "ezpass_num"]
-farmer_num = df.loc[:, "farmer_num"]
-greenhouse_num = df.loc[:, "greenhouse_num"]
+fire_station_num = df.loc[:, "fire_station_num"]
+crime_num = df.loc[:, "crime_num"]
+tabacco_num = df.loc[:, "tabacco_num"]
 restaurant_num = df.loc[:, "restaurant_num"]
 historic_num = df.loc[:, "historic_num"]
 
 equation_df=pd.concat([price,
                        pop,
                        dist_from_st,
-                       ezpass_num,
-                       farmer_num,
-                       greenhouse_num,
+                       fire_station_num,
+                       crime_num,
+                       tabacco_num,
                        restaurant_num,
                        historic_num
                        ], axis=1)
