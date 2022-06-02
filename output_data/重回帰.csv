@@ -1,0 +1,28 @@
+                       OLS Regression Results                       
+Dep. Variable:   ,price           ,  R-squared:         ,   0.038   
+Model:           ,OLS             ,  Adj. R-squared:    ,   0.037   
+Method:          ,Least Squares   ,  F-statistic:       ,   260.2   
+Date:            ,Thu, 02 Jun 2022,  Prob (F-statistic):,  0.00     
+Time:            ,18:21:11        ,  Log-Likelihood:    ,-3.2154e+05
+No. Observations:, 46717          ,  AIC:               ,6.431e+05  
+Df Residuals:    , 46709          ,  BIC:               ,6.432e+05  
+Df Model:        ,     7          ,                     ,           
+Covariance Type: ,nonrobust       ,                     ,           
+                ,   coef   , std err ,    t    ,P>|t| ,  [0.025 ,  0.975] 
+const           ,  170.3386,    3.722,   45.767, 0.000,  163.044,  177.633
+pop             ,   -0.0009, 7.69e-05,  -11.073, 0.000,   -0.001,   -0.001
+dist_from_st    ,   -6.6710,    1.322,   -5.044, 0.000,   -9.263,   -4.079
+fire_station_num,   44.1123,    7.730,    5.707, 0.000,   28.961,   59.263
+crime_num       ,   -0.1290,    0.021,   -6.152, 0.000,   -0.170,   -0.088
+tabacco_num     ,    1.0861,    0.091,   11.910, 0.000,    0.907,    1.265
+restaurant_num  ,   -0.4332,    0.049,   -8.785, 0.000,   -0.530,   -0.337
+historic_num    ,    3.2266,    0.160,   20.140, 0.000,    2.913,    3.541
+Omnibus:      ,103417.481,  Durbin-Watson:     ,   1.843     
+Prob(Omnibus):, 0.000    ,  Jarque-Bera (JB):  ,826287978.212
+Skew:         ,20.477    ,  Prob(JB):          ,    0.00     
+Kurtosis:     ,653.241   ,  Cond. No.          ,4.48e+05     
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.48e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.

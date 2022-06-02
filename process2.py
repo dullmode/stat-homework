@@ -1,6 +1,6 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np
 import pandas as pd
+import statsmodels.api as sm
 
 df = pd.read_csv('output_data/result.csv')
 price = df.loc[:, "price"]
@@ -22,9 +22,17 @@ equation_df=pd.concat([price,
                        historic_num
                        ], axis=1)
 
-plt.figure(figsize=(12, 9))
-a = sns.heatmap(equation_df.corr(), annot=True, cmap='Blues')
-a.figure.savefig('output_data/相関係数.png')
+equation_df = equation_df.dropna()
 
-b = sns.pairplot(equation_df)
-b.savefig('output_data/散布図.png')
+
+price = pd.DataFrame(equation_df.price)
+x_list = equation_df.drop("price",1)
+
+model = sm.OLS(price, sm.add_constant(x_list))
+result = model.fit()
+
+with open('output_data/重回帰.csv', 'w') as fh:
+    fh.write(result.summary().as_csv())
+
+print(result.summary())
+print(result.pvalues)
