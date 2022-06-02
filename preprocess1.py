@@ -29,9 +29,10 @@ tqdm.pandas()
 ab_df = pd.read_csv("input_data/airbnb.csv")
 hi_df = pd.read_csv("input_data/historic.csv")
 st_df = pd.read_csv("input_data/station.csv")
+cr_df = pd.read_csv("input_data/crime.csv")
 geolocator = Nominatim(user_agent='http')
 
-#adding column 'zip' using lat and lon to airbnb.csv
+##adding column 'zip' using lat and lon to airbnb.csv
 ab_df['zip'] = ab_df.progress_apply(
         get_zipcode,
         axis=1,
@@ -50,7 +51,7 @@ ab_df['dist_from_st'] = ab_df.progress_apply(
         )
 ab_df.to_csv('input_data/airbnb.csv')
 
-#adding column 'zip' using lat and lon to historic.csv
+##adding column 'zip' using lat and lon to historic.csv
 hi_df['zip'] = hi_df.progress_apply(
         get_zipcode,
         axis=1,
@@ -58,5 +59,16 @@ hi_df['zip'] = hi_df.progress_apply(
         lat_field='Latitude',
         lon_field='Longitude'
         )
-
 hi_df.to_csv('input_data/historic.csv')
+
+#adding column 'zip' using lat and lon to crime.csv
+cr_df = cr_df.sample(frac=0.1)
+cr_df['zip'] = cr_df.progress_apply(
+        get_zipcode,
+        axis=1,
+        geolocator=geolocator,
+        lat_field='Latitude',
+        lon_field='Longitude'
+        )
+cr_df.to_csv('input_data/crime.csv')
+
