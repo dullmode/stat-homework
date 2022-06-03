@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
+from statsmodels.stats.outliers_influence import *
 
 df = pd.read_csv('output_data/result.csv')
 price = df.loc[:, "price"]
@@ -34,5 +35,7 @@ result = model.fit()
 with open('output_data/重回帰.csv', 'w') as fh:
     fh.write(result.summary().as_csv())
 
-print(result.summary())
-print(result.pvalues)
+num_cols = model.exog.shape[1] 
+vifs = [variance_inflation_factor(model.exog, i) for i in range(0, num_cols)]
+pdv = pd.DataFrame(vifs, index=model.exog_names, columns=["VIF"])
+pdv.to_csv('output_data/vif.csv')

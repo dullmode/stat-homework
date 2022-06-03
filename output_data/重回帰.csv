@@ -2,8 +2,8 @@
 Dep. Variable:   ,price           ,  R-squared:         ,   0.038   
 Model:           ,OLS             ,  Adj. R-squared:    ,   0.037   
 Method:          ,Least Squares   ,  F-statistic:       ,   260.2   
-Date:            ,Thu, 02 Jun 2022,  Prob (F-statistic):,  0.00     
-Time:            ,18:21:11        ,  Log-Likelihood:    ,-3.2154e+05
+Date:            ,Fri, 03 Jun 2022,  Prob (F-statistic):,  0.00     
+Time:            ,15:25:41        ,  Log-Likelihood:    ,-3.2154e+05
 No. Observations:, 46717          ,  AIC:               ,6.431e+05  
 Df Residuals:    , 46709          ,  BIC:               ,6.432e+05  
 Df Model:        ,     7          ,                     ,           
